@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 public class DogGenetics {
     public static void main(String[] args){
-        ArrayList<String> dogBreeds = new ArrayList<>(Arrays.asList("Bulldog", "Labrador", "Husky",
-                "Yorkshire Terrier", "Cocker Spaniel" ));
 
         Scanner keyboard = new Scanner(System.in);
         Random generator = new Random();
+
+        ArrayList<String> dogBreeds = new ArrayList<>(Arrays.asList("Bulldog", "Labrador", "Husky",
+                "Yorkshire Terrier", "Cocker Spaniel" ));
+        ArrayList<Integer> percentages = generatePercentageList(generator, dogBreeds);
 
         System.out.println("What is your dog's name?");
         String dogName = keyboard.nextLine();
@@ -17,8 +19,6 @@ public class DogGenetics {
         System.out.println("Well, then I have this highly reliable report on " +
                 dogName + "'s prestigious background here.");
         System.out.println(dogName + " is:");
-
-        ArrayList<Integer> percentages = generatePercentageList(generator, dogBreeds);
 
         for (int i=0; i < percentages.size(); i++) {
             System.out.println(percentages.get(i) + "% " + dogBreeds.get(i));
